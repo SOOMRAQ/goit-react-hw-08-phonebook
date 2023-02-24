@@ -12,12 +12,15 @@ const Filter = () => {
     dispatch(changeFilter(value.toLowerCase()));
   };
   return (
-    <StyledInput
-      type="text"
-      onChange={event => handleChange(event)}
-      value={filter}
-      placeholder="Filter by name"
-    />
+    <form>
+      <StyledInput
+        id="filter"
+        type="text"
+        onChange={event => handleChange(event)}
+        value={filter}
+        placeholder="Filter by name"
+      />
+    </form>
   );
 };
 

@@ -9,6 +9,11 @@ export const StyledItem = styled.li`
   white-space: nowrap;
   border: 1px dashed steelblue;
   border-radius: 50px;
-  padding-left: 10px;
-  padding-right: 5px;
+  padding: 4px 10px;
+`;
+
+export const StyledList = styled.ul`
+  display: flex;
+  gap: 4px;
+  font-size: 16px;
 `;

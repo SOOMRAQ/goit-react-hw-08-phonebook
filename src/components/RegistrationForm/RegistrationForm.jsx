@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/thunks';
+import {
+  StyledButton,
+  StyledDiv,
+  StyledForm,
+  StyledInput,
+  StyledLabel,
+} from './RegistrationForm.styled';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -34,42 +41,45 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div>
-      <h2>Create your account</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <StyledDiv>
+      <h2>
+        <span style={{ color: 'steelblue' }}>Create</span>
+        <hr /> your account
+      </h2>
+      <StyledForm onSubmit={handleSubmit}>
+        <StyledLabel>
           Name
-          <input
+          <StyledInput
             type="text"
             name="name"
             value={name}
             onChange={handleChange}
             required
           />
-        </label>
-        <label>
+        </StyledLabel>
+        <StyledLabel>
           Email
-          <input
+          <StyledInput
             type="text"
             name="email"
             value={email}
             onChange={handleChange}
             required
           />
-        </label>
-        <label>
+        </StyledLabel>
+        <StyledLabel>
           Password
-          <input
+          <StyledInput
             type="text"
             name="password"
             value={password}
             onChange={handleChange}
             required
           />
-        </label>
-        <button type="submit">Register</button>
-      </form>
-    </div>
+        </StyledLabel>
+        <StyledButton type="submit">Register</StyledButton>
+      </StyledForm>
+    </StyledDiv>
   );
 };
 

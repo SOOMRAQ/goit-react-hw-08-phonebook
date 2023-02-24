@@ -3,38 +3,41 @@ import styled from '@emotion/styled';
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  gap: 16px;
+  width: 280px;
 `;
+
 export const StyledLabel = styled.label`
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 5px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
 `;
-export const StyledInput = styled.input`
-  border-radius: 50px;
-  border: none;
-  background-color: steelblue;
-  padding: 5px 10px;
-  color: white;
-  font-family: inherit;
 
-  &:focus {
-    outline: 1px solid black;
+export const StyledInput = styled.input`
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-family: 'Cinzel', serif;
+  padding: 4px;
+  transition: border 400ms ease;
+
+  :hover,
+  :focus {
+    border-color: steelblue;
   }
 `;
 export const StyledButton = styled.button`
-  font-family: inherit;
-  background: green;
-  padding: 10px 20px;
   cursor: pointer;
-  border-radius: 50px;
-  color: white;
+  font-family: 'Cinzel', serif;
+  background: none;
   border: none;
-  transition: transform 400ms ease;
+  border: 1px solid steelblue;
+  padding: 4px 16px;
+  align-self: center;
+  transition: color 400ms ease, background-color 400ms ease;
 
-  &:hover {
-    transform: scale(1.03);
+  :hover {
+    background-color: steelblue;
+    color: white;
   }
 `;

@@ -2,7 +2,7 @@ import Form from 'components/Form';
 import ContactsList from 'components/ContactsList';
 import Filter from 'components/Filter';
 import PhonebookSection from 'components/Section/Section';
-import { StyledContainer } from './App.styled';
+import { StyledContainer } from '../../components/App/App.styled';
 
 const Phonebook = () => {
   return (

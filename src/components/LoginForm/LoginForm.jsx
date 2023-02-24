@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from 'redux/thunks';
+import {
+  StyledButton,
+  StyledDiv,
+  StyledForm,
+  StyledInput,
+  StyledLabel,
+} from './LoginForm.styled';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -28,32 +35,35 @@ const LoginForm = () => {
   };
 
   return (
-    <div>
-      <h2>Sign in</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <StyledDiv>
+      <h2>
+        <span style={{ color: 'steelblue' }}>Sign</span> <hr />
+        in
+      </h2>
+      <StyledForm onSubmit={handleSubmit}>
+        <StyledLabel>
           Email
-          <input
+          <StyledInput
             type="text"
             name="email"
             value={email}
             onChange={handleChange}
             required
           />
-        </label>
-        <label>
+        </StyledLabel>
+        <StyledLabel>
           Password
-          <input
+          <StyledInput
             type="text"
             name="password"
             value={password}
             onChange={handleChange}
             required
           />
-        </label>
-        <button type="submit">Log in</button>
-      </form>
-    </div>
+        </StyledLabel>
+        <StyledButton type="submit">Log in</StyledButton>
+      </StyledForm>
+    </StyledDiv>
   );
 };
 

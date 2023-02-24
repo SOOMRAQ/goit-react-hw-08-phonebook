@@ -1,19 +1,14 @@
 import styled from '@emotion/styled';
 
 export const StyledInput = styled.input`
-  border-radius: 50px;
-  border: none;
-  background-color: steelblue;
-  padding: 5px 10px;
-  color: white;
-  font-family: inherit;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-family: 'Cinzel', serif;
+  padding: 4px;
+  transition: border 400ms ease;
 
-  &:focus {
-    outline: 1px solid black;
-  }
-
-  &::placeholder {
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
+  :hover,
+  :focus {
+    border-color: steelblue;
   }
 `;

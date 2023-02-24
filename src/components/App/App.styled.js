@@ -6,11 +6,10 @@ export const StyledContainer = styled.div`
   top: 50%;
   left: 50px;
   transform: translateY(-50%);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 666px;
-  width: 500px;
+  width: 506px;
   margin: 0 auto;
   background-image: url(${background});
   background-size: contain;

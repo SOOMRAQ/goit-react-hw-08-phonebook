@@ -1,9 +1,9 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts, getFilter } from 'redux/selectors';
+import { fetchContacts } from 'redux/thunks';
 import SingleContact from 'components/SingleContact';
 import { StyledList } from './ContactsList.styled';
-import { fetchContacts } from 'redux/thunks';
-import { useEffect } from 'react';
 
 const ContactsList = () => {
   const contacts = useSelector(getContacts);
@@ -25,9 +25,17 @@ const ContactsList = () => {
   return (
     <>
       <StyledList>
-        {filteredContacts()?.map(({ id, name, number }) => {
-          return <SingleContact key={id} id={id} name={name} number={number} />;
-        })}
+        {filteredContacts() ? (
+          filteredContacts()?.map(({ id, name, number }) => {
+            return (
+              <SingleContact key={id} id={id} name={name} number={number} />
+            );
+          })
+        ) : (
+          <div>
+            <h3>No contacts</h3>
+          </div>
+        )}
       </StyledList>
     </>
   );
