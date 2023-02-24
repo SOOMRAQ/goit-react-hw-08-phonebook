@@ -1,7 +1,7 @@
 import IconButton from 'components/IconButton';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteContactThunk } from 'redux/thunks';
+import { deleteContact } from 'redux/thunks';
 import { StyledItem } from './SingleContact.styled';
 import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
 
@@ -14,10 +14,7 @@ const SingleContact = ({ id, name, number }) => {
         <p>{name}</p>
         <p>{number}</p>
       </div>
-      <IconButton
-        type="button"
-        onClick={() => dispatch(deleteContactThunk(id))}
-      >
+      <IconButton type="button" onClick={() => dispatch(deleteContact(id))}>
         <DeleteIcon width="13" height="13" fill="#fff" />
       </IconButton>
     </StyledItem>

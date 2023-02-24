@@ -9,7 +9,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import checkContacts from 'services/checkContacts';
 import { getContacts } from 'redux/selectors';
-import { addContactThunk } from 'redux/thunks';
+import { addContact } from 'redux/thunks';
 
 const Form = () => {
   const [name, setName] = useState('');
@@ -40,7 +40,7 @@ const Form = () => {
     ).length;
 
     if (!isInContactsList) {
-      dispatch(addContactThunk({ name, number }));
+      dispatch(addContact({ name, number }));
     }
     reset();
   };

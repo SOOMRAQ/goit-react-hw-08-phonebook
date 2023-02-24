@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContacts, getFilter } from 'redux/selectors';
 import SingleContact from 'components/SingleContact';
 import { StyledList } from './ContactsList.styled';
-import { fetchContactsThunk } from 'redux/thunks';
+import { fetchContacts } from 'redux/thunks';
 import { useEffect } from 'react';
 
 const ContactsList = () => {
@@ -11,7 +11,7 @@ const ContactsList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContactsThunk());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   const filteredContacts = () => {
