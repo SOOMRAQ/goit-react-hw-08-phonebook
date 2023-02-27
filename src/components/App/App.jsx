@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { fetchCurrentUser } from 'redux/thunks';
 import Nav from 'components/Nav';
 import { PrivateRoute, RestrictRoute } from 'components/Routes/Routes';
+import Home from 'scenes/Home';
 
 const LoginPage = lazy(() => import('scenes/LoginPage'));
 const RegistrationPage = lazy(() => import('scenes/RegistrationPage'));
@@ -20,8 +21,9 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Nav />}>
+        <Route index element={<Home />} />
         <Route
-          index
+          path="/login"
           element={
             <RestrictRoute redirectTo="/contacts" component={<LoginPage />} />
           }

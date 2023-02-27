@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <StyledList>
       <StyledItem>
-        <StyledNavLink to={'/'}>
+        <StyledNavLink to={'login'}>
           <FaSignInAlt />
           Login
         </StyledNavLink>
